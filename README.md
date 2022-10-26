@@ -2,3 +2,4 @@
 
 ## Autores
 - Cesar A. Mayora
+- Daniel Pérez
