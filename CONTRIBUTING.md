@@ -24,3 +24,9 @@ cp .envrc .env
 ```
 
 Rellenar en `.env` los campos correspondientes a las variables de entorno locales.
+
+## Ejecucion
+
+```bash
+bash run.sh
+```
