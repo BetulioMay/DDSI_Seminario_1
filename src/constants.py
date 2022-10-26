@@ -1,0 +1,3 @@
+'''
+Constantes o variables globales.
+'''
