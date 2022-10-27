@@ -1,12 +1,24 @@
 # Setup del proyecto
 
-> Se supone que se tiene python3 ya instalado.
+<blockquote>
+	<p>Se supone que se tiene python3 ya instalado. Si no se tiene instalado, lo puede instalar en https://www.python.org/downloads.</p>
+	<p>Tambien se supone que se tiene git instalado (esta instalado por defecto en distros Linux). En caso de no ser asi (caso Windows), instalarlo en https://git-scm.com/downloads</p>
+</blockquote>
+
+### Clonar repositorio
+
+- Hacer `fork` al repositorio en la parte superior derecha (Boton _fork_).
+	- Se creara un repositorio https://github.com/tu_nombre_de_usuario/DDSI_Seminario_1
+	- Clonar repositorio.
+	- Crear un nuevo repositorio remoto que apunte al repositorio original.
+	```bash
+	git remote add upstream https://github.com/BetulioMay/DDSI_Seminario_1
+	```
 
 ### Instalacion de dependencias
 
-- Instalar y actualizar `pip`
+- Actualizar `pip`
 ```bash
-sudo apt install python3-pip
 python3 -m pip install --upgrade pip
 ```
 
@@ -30,3 +42,17 @@ Rellenar en `.env` los campos correspondientes a las variables de entorno locale
 ```bash
 bash run.sh
 ```
+
+## Contribuir al proyecto
+
+- Actualiza tu repositorio con el repositorio _upstream_
+```bash
+git pull upstream master
+```
+- Hacer los cambios que sean oportunos: arreglar bugs, agregar una nueva funcionalidad, etc. Haciendo `commit` de tus cambios (agrega cuantos creas necesarios por el camino, no tengas miedo) con un mensaje que refleje de la mejor manera posible tales cambios.
+- Comprobar que los cambios se efectuen de manera correcta.
+- Actualizar tus cambios con tu repositorio https://github.com/tu_nombre_de_usuario/DDSI_Seminario_1.
+```bash
+git push origin master
+```
+- Finalmente crear un _pull request_ para aportar tu contribucion.
