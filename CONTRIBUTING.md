@@ -39,8 +39,13 @@ Rellenar en `.env` los campos correspondientes a las variables de entorno locale
 
 ## Ejecucion
 
+- Linux
 ```bash
 bash run.sh
+```
+- Windows
+```powershell
+.\run.ps1
 ```
 
 ## Contribuir al proyecto
