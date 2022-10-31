@@ -6,25 +6,11 @@ Aqui se ejecutara el `main loop` del programa
 from dotenv import load_dotenv
 load_dotenv()
 
-import constants as c
-
-import cx_Oracle
+import connection
 
 def run():
-	try:
-		conn = cx_Oracle.connect(
-			user=c.USER,
-			password=c.PASSWD,
-			dsn=f"{c.HOST}:{c.PORT}/{c.DSN}",
-			encoding="UTF-8"
-		)
-		print(conn.version)
-	except Exception as e:
-		raise(e)
-
-	# Close connection
-	if conn:
-		conn.close()
+	conn = connection.connect()
+	connection.close_connection(conn)
 
 if __name__ == "__main__":
 	run()

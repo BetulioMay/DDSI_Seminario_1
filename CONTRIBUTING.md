@@ -15,7 +15,7 @@
 	git remote add upstream https://github.com/BetulioMay/DDSI_Seminario_1
 	```
 
-### Instalacion de dependencias
+### Instalación de dependencias
 
 - Actualizar `pip`
 ```bash
@@ -37,7 +37,7 @@ cp .envrc .env
 
 Rellenar en `.env` los campos correspondientes a las variables de entorno locales.
 
-## Ejecucion
+## Ejecución
 
 - Linux
 ```bash
@@ -55,9 +55,17 @@ bash run.sh
 git pull upstream master
 ```
 - Hacer los cambios que sean oportunos: arreglar bugs, agregar una nueva funcionalidad, etc. Haciendo `commit` de tus cambios (agrega cuantos creas necesarios por el camino, no tengas miedo) con un mensaje que refleje de la mejor manera posible tales cambios.
-- Comprobar que los cambios se efectuen de manera correcta.
+- Comprobar que los cambios se efectúen de manera correcta.
 - Actualizar tus cambios con tu repositorio https://github.com/tu_nombre_de_usuario/DDSI_Seminario_1.
 ```bash
 git push origin master
 ```
-- Finalmente crear un _pull request_ para aportar tu contribucion.
+- Finalmente crear un _pull request_ para aportar tu contribución.
+
+## Para noobs de Python
+- _Naming convention_ (convención de nombres):
+	- Usar siempre _snake_case_, NO _camelCase_.
+- Usaremos un paradigma modular:
+	- Todo son procedimientos (funciones).
+	- Agrupar funciones en ficheros _.py_ (modulos).
+	- Nada de clases (No matar moscas a cañonazos).
