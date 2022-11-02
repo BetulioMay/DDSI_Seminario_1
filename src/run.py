@@ -9,8 +9,6 @@ from dotenv import load_dotenv
 load_dotenv()
 
 import connection
-import pyodbc
-import constants as c
 
 def run():
 	conn = connection.connect()
