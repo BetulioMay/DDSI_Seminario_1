@@ -27,6 +27,11 @@ python3 -m pip install --upgrade pip
 pip3 install -r requirements.txt
 ```
 
+#### Oracle Instant Client
+Para conectarnos a la base de datos de Oracle desde Python, Python necesita un conjunto de librerias para ser cliente de la base de datos, para ello necesitamos instalarno el _instant_client_ de Oracle. Aqui dejo un link a un video tutorial (de los muchos que hay) para tomar de guia asi como el link de descarga del _instant_client_ en la pagina web de Oracle:
+- [Oracle Instant client](https://www.oracle.com/database/technologies/instant-client/downloads.html).
+- [Video tutorial](https://www.youtube.com/watch?v=v0TkfVFGO5c).
+
 ### Configurar variables de entorno
 
 - Copiar y pegar lo que hay en `.envrc` en `.env`
