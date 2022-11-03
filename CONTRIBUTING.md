@@ -67,6 +67,9 @@ git push origin master
 ```
 - Finalmente crear un _pull request_ para aportar tu contribución.
 
+## Objetivos
+Ver [ROADMAP.md](https://github.com/BetulioMay/DDSI_Seminario_1/blob/master/ROADMAP.md).
+
 ## Para noobs de Python
 - _Naming convention_ (convención de nombres):
 	- Usar siempre _snake_case_, NO _camelCase_.
