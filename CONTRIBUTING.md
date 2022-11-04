@@ -70,6 +70,9 @@ git push origin master
 ## Objetivos
 Ver [ROADMAP.md](https://github.com/BetulioMay/DDSI_Seminario_1/blob/master/ROADMAP.md).
 
+## Referencias
+- [Docs cx_Oracle](https://cx-oracle.readthedocs.io/)
+
 ## Para noobs de Python
 - _Naming convention_ (convención de nombres):
 	- Usar siempre _snake_case_, NO _camelCase_.

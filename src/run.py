@@ -14,10 +14,11 @@ from constants import MENU_OPTION
 
 def run():
 	conn = connection.connect()
+	cursor = connection.get_cursor(conn)
 
-	finnish = False
+	finish = False
 	option = None
-	while not finnish:
+	while not finish:
 		option = main.main_menu()
 		match int(option):
 			case MENU_OPTION.CREATE_TABLE.value:
@@ -29,9 +30,10 @@ def run():
 			case MENU_OPTION.SHOW_TABLES.value:
 				print("Not implemented.")
 			case MENU_OPTION.EXIT_MENU.value:
-				connection.close_connection(conn)
+				connection.close_cursor(cursor=cursor)
+				connection.close_connection(conn=conn)
 				print("BYE.")
-				finnish = True
+				finish = True
 
 if __name__ == "__main__":
 	run()

@@ -24,9 +24,19 @@ def connect():
 
 '''
 Cierra la conexion `conn` con la BD.
-`conn` -> objeto `connection`
 '''
 def close_connection(conn):
 	if conn:
 		print("Closing connection...")
 		conn.close()
+
+'''
+Devuelve un objeto `cursor` de una conexion a BD `conn`
+'''
+def get_cursor(conn):
+	return conn.cursor()
+
+def close_cursor(cursor):
+	if cursor:
+		print("Closing cursor...")
+		cursor.close()
