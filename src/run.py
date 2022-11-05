@@ -11,6 +11,7 @@ load_dotenv()
 import connection
 import interfaces.main as main
 from constants import MENU_OPTION
+import transactions.register_order as register_order
 
 def run():
 	conn = connection.connect()
@@ -20,13 +21,13 @@ def run():
 	option = None
 	while not finish:
 		option = main.main_menu()
-		match int(option):
+		match option:
 			case MENU_OPTION.CREATE_TABLE.value:
 				print("Not implemented.")
 			case MENU_OPTION.DROP_TABLE.value:
 				print("Not implemented.")
 			case MENU_OPTION.REGISTER_ORDER.value:
-				print("Not implemented.")
+				register_order.register_order(conn=conn, cursor=cursor)
 			case MENU_OPTION.SHOW_TABLES.value:
 				print("Not implemented.")
 			case MENU_OPTION.EXIT_MENU.value:

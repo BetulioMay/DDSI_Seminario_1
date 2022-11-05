@@ -1,6 +1,7 @@
+import constants as c
 
 def main_menu():
-	print("------------------------")
+	print(c.HEADER)
 	print("MENU PRINCIPAL")
 	print("Selecciona una opcion:")
 	print("1. Crear tablas")
@@ -8,4 +9,4 @@ def main_menu():
 	print("3. Dar de alta pedido")
 	print("4. Mostrar tablas")
 	print("5. Salir")
-	return input("> ")
+	return int(input(c.IN_PROMPT))
