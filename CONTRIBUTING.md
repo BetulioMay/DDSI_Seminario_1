@@ -28,15 +28,14 @@ pip3 install -r requirements.txt
 ```
 
 #### Oracle Instant Client
-Para conectarnos a la base de datos de Oracle desde Python, Python necesita un conjunto de librerias para ser cliente de la base de datos, para ello necesitamos instalarno el _instant_client_ de Oracle. Aqui dejo un link a un video tutorial (de los muchos que hay) para tomar de guia asi como el link de descarga del _instant_client_ en la pagina web de Oracle:
+Para conectarnos a la base de datos de Oracle desde Python, Python necesita un conjunto de librerias para ser cliente de la base de datos, para ello necesitamos instalarnos el _instant_client_ de Oracle. Aqui dejo un link a un video tutorial (de los muchos que hay) para tomar de guia asi como el link de descarga del _instant_client_ en la pagina web de Oracle:
 - [Oracle Instant client](https://www.oracle.com/database/technologies/instant-client/downloads.html).
 - [Video tutorial](https://www.youtube.com/watch?v=v0TkfVFGO5c).
 
 ### Configurar variables de entorno
 
-- Copiar y pegar lo que hay en `.envrc` en `.env`
-```bash
-touch .env
+- Copiar y pegar lo que hay en `.envrc` en un nuevo archivo `.env`
+```powershell
 cp .envrc .env
 ```
 
@@ -59,13 +58,13 @@ bash run.sh
 ```bash
 git pull upstream master
 ```
-- Hacer los cambios que sean oportunos: arreglar bugs, agregar una nueva funcionalidad, etc. Haciendo `commit` de tus cambios (agrega cuantos creas necesarios por el camino, no tengas miedo) con un mensaje que refleje de la mejor manera posible tales cambios.
+- Hacer los cambios que sean oportunos: arreglar bugs, agregar una nueva funcionalidad, cumplir tareas, etc. Haciendo `commit` de tus cambios (agrega cuantos creas necesarios por el camino, no tengas miedo) con un mensaje que refleje de la mejor manera posible y breve tales cambios.
 - Comprobar que los cambios se efectúen de manera correcta.
 - Actualizar tus cambios con tu repositorio https://github.com/tu_nombre_de_usuario/DDSI_Seminario_1.
 ```bash
 git push origin master
 ```
-- Finalmente crear un _pull request_ para aportar tu contribución.
+- Finalmente crear una _pull request_ para aportar tu contribución.
 
 ## Objetivos
 Ver [ROADMAP.md](https://github.com/BetulioMay/DDSI_Seminario_1/blob/master/ROADMAP.md).
@@ -79,4 +78,3 @@ Ver [ROADMAP.md](https://github.com/BetulioMay/DDSI_Seminario_1/blob/master/ROAD
 - Usaremos un paradigma modular:
 	- Todo son procedimientos (funciones).
 	- Agrupar funciones en ficheros _.py_ (modulos).
-	- Nada de clases (No matar moscas a cañonazos).

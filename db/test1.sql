@@ -25,10 +25,10 @@ insert into stock values (3, 15);
 insert into stock values (4, 4);
 
 select * from pedido;
-insert into pedido values (1, 'C1', sysdate);
-insert into pedido values (2, 'C2', sysdate);
-insert into pedido values (3, 'C3', sysdate);
-insert into pedido values (4, 'C4', sysdate);
+insert into pedido values (1, 1, sysdate);
+insert into pedido values (2, 2, sysdate);
+insert into pedido values (3, 3, sysdate);
+insert into pedido values (4, 4, sysdate);
 
 select * from detalle_pedido;
 
