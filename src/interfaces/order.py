@@ -4,9 +4,9 @@ import constants as c
 
 def get_order_data():
 	print(c.HEADER)
-	# TODO: usar UUIDs o auto increment para el id del pedido
 	
 	# NOTE: La insercion de un codigo de pedido es solo para testear
+	# se pretende generar identificadores unicos para los pedidos.
 	order_id = ''
 	client_id = ''
 	while order_id == '' or order_id is None:

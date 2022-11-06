@@ -4,7 +4,12 @@ import interfaces.detail_order as detail
 from constants import ORDER_OPTION
 import helpers as h
 
-import sys
+'''
+TODO:
+- Hacer de order_id un varchar(255) generado como UUID.
+- Manejar errores generados por cx_Oracle.
+- Mostrar las tablas de la DB al terminar las opciones 1, 2 o 3.
+'''
 
 # Inserta un nuevo pedido a la tabla Pedido
 def insert_basic_data(cursor):
@@ -15,8 +20,6 @@ def insert_basic_data(cursor):
 	'''
 	cursor.execute(sql, ordid=order_id, clid=client_id, orddt=order_date)
 
-	# print(cursor.lastrowid)
-	# return cursor.lastrowid
 	return order_id
 
 # Inserta un detalle de un pedido a la tabla Detalle-Pedido

@@ -1,5 +1,5 @@
 '''
-Funciones de ayuda.
+Funciones de utilidad.
 '''
 
 def check_stock(cursor, product_id, quantity):
