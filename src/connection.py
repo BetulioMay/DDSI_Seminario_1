@@ -1,6 +1,7 @@
 
 import constants as c
 import cx_Oracle
+from helpers import log
 
 #Conectar con la base de datos Oracle con las credenciales especificadas en .env.
 def connect():
@@ -11,8 +12,7 @@ def connect():
 			dsn=f'{c.HOST}/{c.DSN}',
 			encoding='UTF-8'
 		)
-		print("Welcome!")
-		print("Version:", conn.version)
+		log(f"Welcome! Connected to Database. Version: {conn.version}")
 	except Exception as e:
 		raise(e)
 
@@ -23,7 +23,7 @@ def connect():
 # Cierra la conexion `conn` con la BD.
 def close_connection(conn):
 	if conn:
-		print("Closing connection...")
+		log("Closing connection...")
 		conn.close()
 
 # Devuelve un objeto `cursor` de una conexion a BD `conn`
@@ -33,5 +33,5 @@ def get_cursor(conn):
 # Cierra el cursor `cursor`
 def close_cursor(cursor):
 	if cursor:
-		print("Closing cursor...")
+		log("Closing cursor...")
 		cursor.close()
