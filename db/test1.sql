@@ -24,15 +24,6 @@ insert into stock values (2, 23);
 insert into stock values (3, 15);
 insert into stock values (4, 4);
 
-select * from pedido;
-insert into pedido values (1, 1, sysdate);
-insert into pedido values (2, 2, sysdate);
-insert into pedido values (3, 3, sysdate);
-insert into pedido values (4, 4, sysdate);
-
-select * from detalle_pedido;
-
-select cantidad from stock where cproducto=1;
 /* Drop tables */
 drop table detalle_pedido;
 drop table pedido;
