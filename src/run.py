@@ -23,9 +23,17 @@ def run():
 		option = main.main_menu()
 		match option:
 			case MENU_OPTION.CREATE_TABLE.value:
-				print("Not implemented.")
+				if inster_tables(cursor=cursor):
+					print("Tablas creadas")
+					conn.commit
+				else:
+					print("No se han conseguido crear las tablas")
 			case MENU_OPTION.DROP_TABLE.value:
-				print("Not implemented.")
+				if drop_tables(cursor=cursor):
+					print("Tablas borradas")
+			    	conn.commit()
+			    else:
+					print("No se han conseguido borrar las tablas")				
 			case MENU_OPTION.REGISTER_ORDER.value:
 				register_order.register_order(conn=conn, cursor=cursor)
 			case MENU_OPTION.SHOW_TABLES.value:
