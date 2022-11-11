@@ -12,6 +12,7 @@ import connection
 import interfaces.main as main
 from constants import MENU_OPTION
 import transactions.register_order as register_order
+from transactions.drop_insert import drop_tables, insert_tables
 
 def run():
 	conn = connection.connect()
@@ -23,16 +24,16 @@ def run():
 		option = main.main_menu()
 		match option:
 			case MENU_OPTION.CREATE_TABLE.value:
-				if inster_tables(cursor=cursor):
+				if insert_tables(cursor=cursor):
 					print("Tablas creadas")
-					conn.commit
+					conn.commit()
 				else:
 					print("No se han conseguido crear las tablas")
 			case MENU_OPTION.DROP_TABLE.value:
 				if drop_tables(cursor=cursor):
 					print("Tablas borradas")
-			    	conn.commit()
-			    else:
+					conn.commit()
+				else:
 					print("No se han conseguido borrar las tablas")				
 			case MENU_OPTION.REGISTER_ORDER.value:
 				register_order.register_order(conn=conn, cursor=cursor)
