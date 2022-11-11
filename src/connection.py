@@ -35,3 +35,27 @@ def close_cursor(cursor):
 	if cursor:
 		log("Closing cursor...")
 		cursor.close()
+
+def commit(conn):
+	try:
+		conn.commit()
+	except Exception as e:
+		log(e)
+
+def rollback(conn):
+	try:
+		conn.rollback()
+	except Exception as e:
+		log(e)
+
+def rollback_to(cursor, savepoint):
+	try:
+		cursor.execute(f"ROLLBACK TO {savepoint}")
+	except Exception as e:
+		log(e)
+
+def savepoint(cursor, name):
+	try:
+		cursor.execute(f"SAVEPOINT {name}")
+	except Exception as e:
+		log(e)

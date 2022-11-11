@@ -25,14 +25,14 @@ def run():
 		match option:
 			case MENU_OPTION.CREATE_TABLE.value:
 				if insert_tables(cursor=cursor):
-					print("Tablas creadas")
-					conn.commit()
+					print("Tablas creadas.")
+					connection.commit(conn)
 				else:
 					print("No se han conseguido crear las tablas")
 			case MENU_OPTION.DROP_TABLE.value:
 				if drop_tables(cursor=cursor):
 					print("Tablas borradas")
-					conn.commit()
+					connection.commit(conn)
 				else:
 					print("No se han conseguido borrar las tablas")				
 			case MENU_OPTION.REGISTER_ORDER.value:

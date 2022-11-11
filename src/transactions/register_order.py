@@ -1,12 +1,12 @@
 
 import interfaces.order as order
 import interfaces.detail_order as detail
+import transactions.helpers as h
 from constants import ORDER_OPTION
-import helpers as h
+from connection import commit, rollback, savepoint, rollback_to
 
 '''
 TODO:
-- Hacer de order_id un varchar(255) generado como UUID.
 - Manejar errores generados por cx_Oracle.
 - Mostrar las tablas de la DB al terminar las opciones 1, 2 o 3.
 '''
@@ -55,7 +55,8 @@ def register_order(conn, cursor):
 	'''
 	order_id = insert_basic_data(cursor=cursor)
 
-	cursor.execute("SAVEPOINT insert_order")
+	svpt = "insert_order"
+	savepoint(cursor, svpt)
 
 	end_transaction = False
 	option = None
@@ -67,14 +68,14 @@ def register_order(conn, cursor):
 				else: print("No se ha añadido ningun detalle de pedido.")
 			case ORDER_OPTION.DELETE_DETAILS.value:
 				print("Borrando detalles del pedido...")
-				cursor.execute("ROLLBACK TO insert_order")
+				rollback_to(cursor, svpt)
 			case ORDER_OPTION.CANCEL_ORDER.value:
 				print("Cancelando pedido...")
-				conn.rollback()
+				rollback(conn)
 				end_transaction = True
 			case ORDER_OPTION.FINISH_ORDER.value:
 				print("Guardando cambios...")
-				conn.commit()
+				commit(conn)
 				print("Hecho.")
 				end_transaction = True
 				
