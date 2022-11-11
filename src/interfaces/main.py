@@ -9,4 +9,7 @@ def main_menu():
 	print("3. Dar de alta pedido")
 	print("4. Mostrar tablas")
 	print("5. Salir")
-	return int(input(c.IN_PROMPT))
+	option = input(c.IN_PROMPT)
+	
+	# Devolvemos cero como opcion nula
+	return int(option) if option.isdigit() else 0
