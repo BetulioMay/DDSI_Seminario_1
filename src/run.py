@@ -12,6 +12,7 @@ import connection
 import interfaces.main as main
 from constants import MENU_OPTION
 import transactions.register_order as register_order
+from transactions import get_data
 
 def run():
 	conn = connection.connect()
@@ -29,7 +30,7 @@ def run():
 			case MENU_OPTION.REGISTER_ORDER.value:
 				register_order.register_order(conn=conn, cursor=cursor)
 			case MENU_OPTION.SHOW_TABLES.value:
-				print("Not implemented.")
+				get_data.get_data(cursor=cursor)
 			case MENU_OPTION.EXIT_MENU.value:
 				connection.close_cursor(cursor=cursor)
 				connection.close_connection(conn=conn)
