@@ -4,6 +4,7 @@ import interfaces.detail_order as detail
 import transactions.helpers as h
 from constants import ORDER_OPTION
 from connection import commit, rollback, savepoint, rollback_to
+from transactions.show_tables import show_tables
 
 '''
 TODO:
@@ -66,13 +67,16 @@ def register_order(conn, cursor):
 			case ORDER_OPTION.ADD_DETAIL.value:
 				if insert_order_detail(cursor, order_id): print("Se ha añadido un detalle de pedido.")
 				else: print("No se ha añadido ningun detalle de pedido.")
+				show_tables(cursor=cursor)
 			case ORDER_OPTION.DELETE_DETAILS.value:
 				print("Borrando detalles del pedido...")
 				rollback_to(cursor, svpt)
+				show_tables(cursor=cursor)
 			case ORDER_OPTION.CANCEL_ORDER.value:
 				print("Cancelando pedido...")
 				rollback(conn)
 				end_transaction = True
+				show_tables(cursor=cursor)
 			case ORDER_OPTION.FINISH_ORDER.value:
 				print("Guardando cambios...")
 				commit(conn)
