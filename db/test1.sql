@@ -12,8 +12,8 @@ create table pedido (
 );
 
 create table detalle_pedido (
-    Cproducto references stock(Cproducto),
     Cpedido references pedido(Cpedido),
+    Cproducto references stock(Cproducto),
     cantidad int default 1,
     primary key (Cproducto, Cpedido)
 );
