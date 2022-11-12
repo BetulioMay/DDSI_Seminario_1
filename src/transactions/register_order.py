@@ -1,20 +1,18 @@
 
 import interfaces.order as order
 import interfaces.detail_order as detail
-import transactions.helpers as h
+from transactions.helpers import check_stock, check_order_id
 from constants import ORDER_OPTION
 from connection import commit, rollback, savepoint, rollback_to
 from transactions.show_tables import show_tables
 
-'''
-TODO:
-- Manejar errores generados por cx_Oracle.
-- Mostrar las tablas de la DB al terminar las opciones 1, 2 o 3.
-'''
-
 # Inserta un nuevo pedido a la tabla Pedido
 def insert_basic_data(cursor):
 	order_id, client_id, order_date = order.get_order_data()
+
+	if not check_order_id(cursor, order_id):
+		print("Cancelando pedido...")
+		return None
 
 	sql = '''
 		INSERT INTO pedido VALUES (:ordid, :clid, :orddt)
@@ -29,7 +27,7 @@ def insert_order_detail(cursor, order_id):
 	product_id, quantity = detail.get_detail_data()
 
 	# Chequear que hay stock para el pedido con la cantidad deseada
-	result = h.check_stock(cursor, product_id, quantity)
+	result = check_stock(cursor, product_id, quantity)
 	if not result:
 		print("Cancelando detalle de pedido...")
 		return False
@@ -55,6 +53,10 @@ def register_order(conn, cursor):
 		Detalle-Pedido(FK Cpedido, FK Cproducto, Cantidad), PK(Cpedido, Cproducto)
 	'''
 	order_id = insert_basic_data(cursor=cursor)
+	if order_id == None:
+		return
+	# Cuando inserte los datos visualizar la DB
+	show_tables(cursor)
 
 	svpt = "insert_order"
 	savepoint(cursor, svpt)

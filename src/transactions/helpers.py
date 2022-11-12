@@ -18,3 +18,14 @@ def check_stock(cursor, product_id, quantity):
 		return False
 	
 	return True
+
+def check_order_id(cursor, order_id):
+	sql = '''
+	SELECT * FROM pedido WHERE Cpedido = :ordid
+	'''
+	cursor.execute(sql, ordid=order_id)
+
+	if cursor.fetchone() != None:
+		print(f"El pedido {order_id} ya existe.")
+		return False
+	return True

@@ -7,11 +7,12 @@
 
 ### Funcionalidad
 
-- Creación de nueva tabla STOCK con 10 tuplas predefinidas en el código.
-- Borrar tabla STOCK.
+- Creación de nueva tabla STOCK con 10 tuplas predefinidas en el código: <strong>HECHO</strong>
+- Borrar tabla STOCK: <strong>HECHO</strong>
 - Dar de alta nuevo pedido: <strong>HECHO</strong>
   - `src/transactions/register_order.py`
-- Mostrar el contenido de las tablas de la BD.
+- Mostrar el contenido de las tablas de la BD. <strong>HECHO</strong>
+  - `src/transactions/show_tables.py`
 - Salir del programa y cerrar conexión con la BD: <strong>HECHO</strong>
   - Implementado el cierre de conexión: `src/connection.py:close_connection()`
 
