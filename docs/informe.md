@@ -36,7 +36,17 @@ cp .envrc .env
 
 - Rellenar en `.env` los campos correspondientes a las credenciales de la base de datos a las que se pretende tener conexión.
 
-> En su defecto, se pueden exportar las variables de entorno correspondientes a los descritos en `.envrc`, dejando `.env` vacío.
+>
+
+<blockquote>
+	<p>
+		En su defecto, se pueden exportar las variables de entorno correspondientes a los descritos en `.envrc`, dejando `.env` vacío.
+	</p>
+	<p>
+		NOTA: El campo DEV si vale 1, se activa un logger con información de conexión. Desactivarlo poniendo a 0 este valor.
+	</p>
+</blockquote>
+
 
 ## Ejecución
 
